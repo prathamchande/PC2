@@ -2,7 +2,7 @@
 
  const apiKey = process.env.MY_SECRET_NAME;
 
-export { apiKey };
+export * as { apiKey };
 
 
 function sayHi(user) {
@@ -13,4 +13,4 @@ function sayBye(user) {
   alert(`Bye, ${user}!`);
 }
 
-export {sayHi, sayBye}; /
+export * as {sayHi, sayBye}; /
