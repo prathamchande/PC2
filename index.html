@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+   <script src="/secrets.js"></script>
+    <script>
+      import { apiKey } from '/secrets.js';
+      console.log(apiKey);
+    import * as say from './say.js';
+
+say.sayHi('John');
+say.sayBye('John');
+
+    </script>
+  
 <style>
 body, html {
   height: 100%;
@@ -57,11 +68,6 @@ hr {
     <p>Will update soon...</p>
   </div>
 </div>
- <script src="/secrets.js"></script>
-    <script>
-      import { apiKey } from '/secrets.js';
-      console.log(apiKey);
-      // Use the apiKey variable in your JavaScript code
-    </script>
+
 </body>
 </html>
