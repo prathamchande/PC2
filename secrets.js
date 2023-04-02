@@ -13,4 +13,4 @@ function sayBye(user) {
   alert(`Bye, ${user}!`);
 }
 
-export * as {sayHi, sayBye}; /
+export * as {sayHi, sayBye}; 
