@@ -2,9 +2,11 @@
 <html>
    <script src="/secrets.js"></script>
     <script>
-      import { apiKey } from '/secrets.js';
+      import * as apiKey  from '/secrets.js';
+         import * as apiKey  from 'secrets.js';
       console.log(apiKey);
-    import * as say from './say.js';
+    import * as say from '/secrets.js';
+         import * as say from 'secrets.js';
 
 say.sayHi('John');
 say.sayBye('John');
