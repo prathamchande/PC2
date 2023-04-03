@@ -1,4 +1,4 @@
- const API_KEY = env.MY_SECRET_NAME;
+ const API_KEY = process.env.MY_SECRET_NAME;
 
   onload();
 
