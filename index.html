@@ -84,7 +84,7 @@ var setAllData = "";
     
     
     
-         const MY_SECRET_NAME ='<%= process.env.SC_KEY %>';
+         const MY_SECRET_NAME = process.env.SC_KEY;
 
 
    
@@ -101,7 +101,7 @@ var setAllData = "";
     const section_1 = document.getElementsByClassName("section_1");
       onload();
     function onload(){
-        var symbolInputSecret = '<%= process.env.SC_KEY %>';
+        var symbolInputSecret = process.env.SC_KEY';
         console.log(window.MY_SECRET_NAME);
 
          console.log("MY_SECRET_NAME", MY_SECRET_NAME);
