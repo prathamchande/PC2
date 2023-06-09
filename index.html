@@ -75,7 +75,7 @@
     </div>
   </div>
   <script>
-    var symbolInputSecret = 'process.env.SC_KEY';
+    var symbolInputSecret = '<%= process.env.SC_KEY %>';
     var symbolEndPoint = '';
 var setAllData = "";
     var getApiDataFetch = document.getElementById("getApiDataFetch");
@@ -83,6 +83,7 @@ var setAllData = "";
     const section_1 = document.getElementsByClassName("section_1");
       onload();
     function onload(){
+        var symbolInputSecret = '<%= process.env.SC_KEY %>';
       document.getElementById("symbolInputSecret").value = localStorage.getItem("symbolInputSecret");
       document.getElementById("symbolEndPoint").value = localStorage.getItem("symbolEndPoint");
 
@@ -90,10 +91,10 @@ var setAllData = "";
 
     function getAllApiDataFetch() {
       
-         symbolInputSecret =  process.env.SC_KEY;
+        
       
       
-    //  symbolInputSecret = document.getElementById("symbolInputSecret").value ? document.getElementById("symbolInputSecret").value : localStorage.getItem("symbolInputSecret");
+      symbolInputSecret = document.getElementById("symbolInputSecret").value ? document.getElementById("symbolInputSecret").value : localStorage.getItem("symbolInputSecret");
         symbolEndPoint = document.getElementById("symbolEndPoint").value ?   document.getElementById("symbolEndPoint").value : localStorage.getItem("symbolEndPoint");
     
       if(symbolInputSecret || symbolEndPoint){
