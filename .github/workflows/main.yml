@@ -1,8 +1,9 @@
-name: My Workflow
+name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -12,17 +13,32 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Build app
-        run: |
-          # Build your app here
-          echo "SC_KEY" : ${{ vars.SC_KEY }}"
-          echo "window.mySecret = '${{ secrets.MY_SECRET_NAME }}';" > secret.js
-          # This generates a JavaScript file with the secret as a global variable
-          
-      - name: Deploy
-        uses: some/deploy-action@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
 
-        
-        
-#           MY_SECRET_NAME: ${{ secrets.MY_SECRET_NAME }}
-#         run: node secrets.js
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set environment variable
+        env:
+          SC_KEY: ${{ secrets.SC_KEY }}
+        run: echo "SC_KEY=$SC_KEY" >> $GITHUB_ENV
+
+      - name: Build and test
+        run: npm run build
+
+      - name: Deploy to dev environment
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "Deploying to dev environment"
+          # Use the SC_KEY environment variable in your deployment process
+          # Example: deploy to a dev server using SCP or SSH
+
+      - name: Deploy to production environment
+        if: github.ref == 'refs/tags/v*'
+        run: |
+          echo "Deploying to production environment"
+          # Use the SC_KEY environment variable in your deployment process
+          # Example: deploy to a production server using SCP or SSH
