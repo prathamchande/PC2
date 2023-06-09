@@ -15,6 +15,7 @@ jobs:
       - name: Build app
         run: |
           # Build your app here
+          echo "SC_KEY" : ${{ vars.SC_KEY }}"
           echo "window.mySecret = '${{ secrets.MY_SECRET_NAME }}';" > secret.js
           # This generates a JavaScript file with the secret as a global variable
           
