@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Questions and Answers Test</title>
+  <title>Questions and Answers</title>
  
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,7 @@
 
 <body class="mainBody">
   <div class="topHeader jumbotron text-center">
-    <h1 class="typingAnimation">Get all Fun info Here Test...!</h1>
+    <h1 class="typingAnimation">Get all Fun info Here...!</h1>
     <p>Just select your choice and get start <i class="fas fa-thumbs-up" style="font-size:20px;color:lightblue;text-shadow:2px 2px 4px #000000;"></i></p> 
 
     <div class="container">     
@@ -60,7 +60,6 @@
   
   </div>
   <div class="mainSection">
-    <div id="apiLoadGithub">{{MY_SECRET_NAME}}</div>
     <div class="section_1 hideShow">
       <div class="mainQA">
         <h3 id="category"></h3>
@@ -76,46 +75,20 @@
     </div>
   </div>
   <script>
-
     var symbolInputSecret = '';
     var symbolEndPoint = '';
 var setAllData = "";
-      var apiLoadGithub = document.getElementById("apiLoadGithub");
-    
-    
-    
-    const MY_SECRET_NAME = '<%= process.env.SC_KEY %>';
-  console.log('Secret Name:', MY_SECRET_NAME);
-
-   
-//fetch(`https://ap-south-1.aws.data.mongodb-api.com/app/prathamapi1-vnxon/endpoint/triviaQA?secret=${MY_SECRET_NAME}`)
-    
-    
-    
-    
-    
-    
-    
     var getApiDataFetch = document.getElementById("getApiDataFetch");
     getApiDataFetch.addEventListener("click", getAllApiDataFetch);
     const section_1 = document.getElementsByClassName("section_1");
       onload();
     function onload(){
-        var symbolInputSecret = '<%= process.env.SC_KEY %>';
-        console.log(window.MY_SECRET_NAME);
-
-         console.log("MY_SECRET_NAME", MY_SECRET_NAME);
-        apiLoadGithub.textContent = MY_SECRET_NAME;
       document.getElementById("symbolInputSecret").value = localStorage.getItem("symbolInputSecret");
       document.getElementById("symbolEndPoint").value = localStorage.getItem("symbolEndPoint");
 
     }
 
     function getAllApiDataFetch() {
-      
-        
-      
-      
       symbolInputSecret = document.getElementById("symbolInputSecret").value ? document.getElementById("symbolInputSecret").value : localStorage.getItem("symbolInputSecret");
         symbolEndPoint = document.getElementById("symbolEndPoint").value ?   document.getElementById("symbolEndPoint").value : localStorage.getItem("symbolEndPoint");
     
@@ -186,10 +159,7 @@ var setAllData = "";
       answerElem.classList.toggle("hideShow");
       });
 
-    
-    
-    
- 
+
 
   </script>
 </body>
