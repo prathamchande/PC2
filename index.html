@@ -60,7 +60,7 @@
   
   </div>
   <div class="mainSection">
-    <div id="apiLoadGithub"></div>
+    <div id="apiLoadGithub">{process.env.SC_KEY}</div>
     <div class="section_1 hideShow">
       <div class="mainQA">
         <h3 id="category"></h3>
@@ -86,7 +86,7 @@ var setAllData = "";
       onload();
     function onload(){
         var symbolInputSecret = 'process.env.SC_KEY';
-        apiLoadGithub.textContent = symbolInputSecret;
+        //apiLoadGithub.textContent = symbolInputSecret;
       document.getElementById("symbolInputSecret").value = localStorage.getItem("symbolInputSecret");
       document.getElementById("symbolEndPoint").value = localStorage.getItem("symbolEndPoint");
 
