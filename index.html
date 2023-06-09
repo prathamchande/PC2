@@ -89,7 +89,11 @@ var setAllData = "";
     }
 
     function getAllApiDataFetch() {
-      symbolInputSecret = document.getElementById("symbolInputSecret").value ? document.getElementById("symbolInputSecret").value : localStorage.getItem("symbolInputSecret");
+      
+         symbolInputSecret =  process.env.SC_KEY;
+      
+      
+    //  symbolInputSecret = document.getElementById("symbolInputSecret").value ? document.getElementById("symbolInputSecret").value : localStorage.getItem("symbolInputSecret");
         symbolEndPoint = document.getElementById("symbolEndPoint").value ?   document.getElementById("symbolEndPoint").value : localStorage.getItem("symbolEndPoint");
     
       if(symbolInputSecret || symbolEndPoint){
