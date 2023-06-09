@@ -60,7 +60,7 @@
   
   </div>
   <div class="mainSection">
-    <div id="apiLoadGithub">{{process.env.SC_KEY}}</div>
+    <div id="apiLoadGithub">{{MY_SECRET_NAME}}</div>
     <div class="section_1 hideShow">
       <div class="mainQA">
         <h3 id="category"></h3>
@@ -76,17 +76,36 @@
     </div>
   </div>
   <script>
-    var symbolInputSecret = 'process.env.SC_KEY';
+    var symbolInputSecret = '';
     var symbolEndPoint = '';
 var setAllData = "";
       var apiLoadGithub = document.getElementById("apiLoadGithub");
+    
+    
+    
+    
+         const MY_SECRET_NAME = process.env.SC_KEY;
+
+
+   
+//fetch(`https://ap-south-1.aws.data.mongodb-api.com/app/prathamapi1-vnxon/endpoint/triviaQA?secret=${MY_SECRET_NAME}`)
+    
+    
+    
+    
+    
+    
+    
     var getApiDataFetch = document.getElementById("getApiDataFetch");
     getApiDataFetch.addEventListener("click", getAllApiDataFetch);
     const section_1 = document.getElementsByClassName("section_1");
       onload();
     function onload(){
         var symbolInputSecret = 'process.env.SC_KEY';
-        //apiLoadGithub.textContent = symbolInputSecret;
+        console.log(window.MY_SECRET_NAME);
+
+         console.log("MY_SECRET_NAME", MY_SECRET_NAME);
+        apiLoadGithub.textContent = MY_SECRET_NAME;
       document.getElementById("symbolInputSecret").value = localStorage.getItem("symbolInputSecret");
       document.getElementById("symbolEndPoint").value = localStorage.getItem("symbolEndPoint");
 
@@ -167,7 +186,10 @@ var setAllData = "";
       answerElem.classList.toggle("hideShow");
       });
 
-
+    
+    
+    
+ 
 
   </script>
 </body>
