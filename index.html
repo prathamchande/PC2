@@ -60,6 +60,7 @@
   
   </div>
   <div class="mainSection">
+    <div id="apiLoadGithub"></div>
     <div class="section_1 hideShow">
       <div class="mainQA">
         <h3 id="category"></h3>
@@ -75,15 +76,17 @@
     </div>
   </div>
   <script>
-    var symbolInputSecret = '<%= process.env.SC_KEY %>';
+    var symbolInputSecret = 'process.env.SC_KEY';
     var symbolEndPoint = '';
 var setAllData = "";
+      var apiLoadGithub = document.getElementById("apiLoadGithub");
     var getApiDataFetch = document.getElementById("getApiDataFetch");
     getApiDataFetch.addEventListener("click", getAllApiDataFetch);
     const section_1 = document.getElementsByClassName("section_1");
       onload();
     function onload(){
-        var symbolInputSecret = '<%= process.env.SC_KEY %>';
+        var symbolInputSecret = 'process.env.SC_KEY';
+        apiLoadGithub.textContent = symbolInputSecret;
       document.getElementById("symbolInputSecret").value = localStorage.getItem("symbolInputSecret");
       document.getElementById("symbolEndPoint").value = localStorage.getItem("symbolEndPoint");
 
